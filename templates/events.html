@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+{% include "base.html" %}
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <style>
+        ul.pagination {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.pagination li {
+            display: inline;
+        }
+
+        ul.pagination li a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        input[type=search] {
+            margin-bottom: 5px;
+            margin-left: 5px;
+            border: 1px solid black;
+            border-radius: 4px;
+            padding-left: 5px;
+            /*-webkit-transition: width 0.4s ease-in-out;*/
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div>
+    <h1>List of ALL Events</h1>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>
+<table id="myTable" class="order-table">
+     <thead>
+     <!--<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">-->
+        <tr>
+
+        {% for head in header %}
+
+        <th>{{head}}</th>
+
+        {%endfor%}
+
+    </tr>
+      </thead>
+      <tbody>
+       {% for event in events %}
+      <tr class="tableHover">
+       {%for key,attr in event.items%}
+
+
+         <td>{{attr}}</td>
+          {% endfor %}
+      </tr>
+      {% endfor %}
+       </tbody>
+    <!--<thead>-->
+    <!--<tr>-->
+
+        <!--{% for head in header %}-->
+
+        <!--<th>{{head}}</th>-->
+
+        <!--{%endfor%}-->
+
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--{% for event in events %}-->
+    <!--<tbody>-->
+    <!--<tr class="tableHover">-->
+
+        <!--{%for key,attr in event.items%}-->
+
+
+        <!--<td>{{attr}}</td>-->
+
+        <!--{%endfor%}-->
+
+
+    <!--</tr>-->
+
+    <!--{% endfor %}-->
+    <!--</tbody>-->
+
+</table>
+
+
+</body>
+</html>
+
+

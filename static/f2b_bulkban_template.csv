@@ -1,0 +1,5 @@
+ip,subnet,duration,reason,tags
+193.168.0.2,/32,90,R1,spb
+193.168.0.3,/31,60,R2,"spb, manual ban"
+193.168.0.4,/30,30,R3,"spb, manual ban, file import,"
+193.168.0.5,/29,7,R4,"spb, manual ban, file import,,"

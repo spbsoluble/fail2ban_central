@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta charset="UTF-8">
+    <style>
+
+        /*li {*/
+        /*font-family: arial, sans-serif;*/
+        /*}*/
+
+        /*h1 {*/
+        /*font-family: arial, sans-serif;*/
+        /*}*/
+
+        img {
+            padding: 5px;
+        }
+
+        .ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .li {
+            float: left;
+            border-right: 1px solid #bbb;
+        }
+
+        .li:last-child {
+            border-right: none;
+        }
+
+        .li .a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .li .a:hover:not(.active) {
+            background-color: #111;
+        }
+
+    </style>
+</head>
+<head>
+    <!--<img src="https://networkingnerd.files.wordpress.com/2012/04/arista_logo.jpg" alt="Arista"-->
+         <!--style="width:837px;height:50px;">-->
+    <ul class="ul">
+        <!--<li class="li"><a class="a" href="/">Home</a></li>-->
+        <li class="li"><a class="a" href="/events">Events</a></li>
+        <li class="li"><a class="a" href="/blacklist"><span>Blacklist</span></a></li>
+        <li class="li"><a class="a" href="/banevents"><span>Ban Events</span></a></li>
+        <li class="li"><a class="a" href="/offenders"><span>Offenders</span></a></li>
+    </ul>
+    <!--<ul>-->
+    <!--<li><a class="active" href="#home">Home</a></li>-->
+    <!--<li><a href="#news">News</a></li>-->
+    <!--<li><a href="#contact">Contact</a></li>-->
+    <!--<li><a href="#about">About</a></li>-->
+    <!--</ul>-->
+
+</head>
+</html>

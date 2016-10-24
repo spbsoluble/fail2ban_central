@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "base.html" %}
+{% load staticfiles %}
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Offenders</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+            input[type=search] {
+            margin-bottom: 5px;
+            margin-left: 5px;
+            border: 1px solid black;
+            border-radius: 4px;
+            padding-left: 5px;
+            /*-webkit-transition: width 0.4s ease-in-out;*/
+        }
+    </style>
+
+
+</head>
+<body>
+<div>
+        <h1>All Offenders</h1>
+
+    </div>
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>
+<table id="myTable" class="order-table">
+    <thead>
+    <tr>
+        {% for head in header %}
+        <th>{{head}}</th>
+        {%endfor%}
+    </tr>
+    </thead>
+    <tbody>
+    {% if message %}
+    <div class='message'>
+        {{ message }}
+    </div>
+    {% endif %}
+    {% for offender in offenders %}
+    <tr class="tableHover">
+        {%for key,attr in offender.items%}
+        <td>{{attr}}</td>
+
+        {%endfor%}
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

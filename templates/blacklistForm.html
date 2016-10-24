@@ -1,0 +1,75 @@
+<html>
+
+<body>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Blacklisted IPs</title>
+    <style>
+        form {
+            font-family: arial, sans-serif;
+        }
+
+        input[type=text] {
+            border: 1px solid black;
+            border-radius: 4px;
+            padding-left: 5px;
+
+            /*-webkit-transition: width 0.4s ease-in-out;*/
+        }
+
+        .btn:focus, .btn:active {
+            outline: none !important;
+        }
+
+        /*.button {*/
+        /*background-color: #0065af; !* Green *!*/
+        /*border: none;*/
+        /*color: white;*/
+        /*padding: 15px 32px;*/
+        /*text-align: center;*/
+        /*text-decoration: none;*/
+        /*display: inline-block;*/
+        /*font-size: 16px;*/
+        /*margin-bottom: 1px;*/
+        /*}*/
+    </style>
+</head>
+<p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("button").click(function () {
+                $('#toggle').toggle('slow');
+            });
+        });
+
+    </script>
+
+
+    <span style="float:right; margin: 3px; outline:0;">
+    <button id="togglable" class="btn btn-info btn-lg">+</button></span>
+    <!--<span class="glyphicon glyphicon-plus"></span>-->
+<div id="toggle" style="display:none">
+    <form method="POST" action="">
+    <span style="float:left; margin-bottom:3px;">
+    {{ form.as_p }}
+     <button data-toggle="tooltip" data-placement="top" title="Click to Ban" type="submit" class="btn btn-success">Ban User</button>
+        <!--<input class="button" type="submit" value="Ban User">-->
+        </span>
+    </form>
+
+    <form method="POST" action="" enctype="multipart/form-data">
+    <span style="float:right;">
+
+    {{form1.as_p}}
+
+
+        <button data-toggle="tooltip" data-placement="top" title="Click to Ban" type="submit" class="btn btn-danger">Ban Users</button>
+        </span>
+    </form>
+</div>
+</body>
+</html>

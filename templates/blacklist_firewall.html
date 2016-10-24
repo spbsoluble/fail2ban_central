@@ -1,0 +1,13 @@
+{% if format = 'firewall' %}
+<html>
+<head>
+    <title>Blacklist PAN Consumable</title>
+</head>
+<body>
+<pre>
+{{ blacklist }}
+</pre>
+</body>
+{% else %}
+{{ blacklist }}
+{% endif %}
